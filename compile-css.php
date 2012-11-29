@@ -15,6 +15,7 @@ $COMMENT = "
  * ! maximum of %d rows :(               
  *******************************************/
 ";
+$SUFFIX = ' .';
 $TABULATOR = "\t";
 $SPACE = " ";
 $DEFINITION_END = ";";
@@ -76,6 +77,6 @@ for($i = 0; $i < $MAX_ITEMS; $i += 1) {
     $bin = str_pad(decbin($i), $PAD_LENGTH, '0', STR_PAD_LEFT);
     
     print_style(sprintf("{$SELECTOR} {$ITEM}:nth-child(%d):before", $i), array(
-        'content' => sprintf('"%s"', $bin)
+        'content' => sprintf('"%s"', $bin) . $SUFFIX
     ));
 }
